@@ -10,10 +10,18 @@ import UIKit
 import Kingfisher
 
 extension UIImageView {
-    func downloadImage(url: String?) {
+    func downloadImage(from url: String?) {
         guard let urlString =  url  else {
             return
         }
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        self.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "logo.pdf"))
+    }
+    
+    func downloadImage(from icon: ServerModels.Response.Icon, size: Int = 200, ext: String = "jpg") {
+        let urlString = icon.iconPrefix + String(size) + icon.suffix + "." + ext
         guard let url = URL(string: urlString) else {
             return
         }

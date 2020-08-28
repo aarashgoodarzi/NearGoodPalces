@@ -19,8 +19,9 @@ class PlacesViewModel: BaseViewModel {
         }
     }
     //MARK: Observables and Vars
-    let something = PublishSubject<Bool>()
-    
+    let list = PublishSubject<[ServerModels.Response.Venue]>()
+    private var listHolder: [ServerModels.Response.Venue] = []
+
     //MARK: - Methods
     override func viewWillAppear() {
         super.viewWillAppear()
@@ -28,6 +29,14 @@ class PlacesViewModel: BaseViewModel {
     }
     
     private func resetViewState() {
+        
+    }
+    
+    func didSelectItem(at row: Int) {
+        
+    }
+    
+    func listReached(at row: Int) {
         
     }
    

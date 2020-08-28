@@ -26,6 +26,8 @@
 		5B79681324F7CD0300243F02 /* Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79681224F7CD0300243F02 /* Codable.swift */; };
 		5B79681524F7CD1500243F02 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79681424F7CD1500243F02 /* Cell.swift */; };
 		5B79681724F7CE2D00243F02 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79681624F7CE2D00243F02 /* Data.swift */; };
+		5B79681924F7E2A000243F02 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79681824F7E2A000243F02 /* SearchBar.swift */; };
+		5B79681C24F7E68F00243F02 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79681B24F7E68F00243F02 /* PlaceCell.swift */; };
 		5BDE618224F6F60B0065389C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE618124F6F60B0065389C /* AppDelegate.swift */; };
 		5BDE618424F6F60B0065389C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE618324F6F60B0065389C /* SceneDelegate.swift */; };
 		5BDE618924F6F60B0065389C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BDE618724F6F60B0065389C /* Main.storyboard */; };
@@ -60,6 +62,8 @@
 		5B79681224F7CD0300243F02 /* Codable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Codable.swift; sourceTree = "<group>"; };
 		5B79681424F7CD1500243F02 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		5B79681624F7CE2D00243F02 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		5B79681824F7E2A000243F02 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		5B79681B24F7E68F00243F02 /* PlaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
 		5BDE617E24F6F60B0065389C /* NearGoodPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearGoodPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BDE618124F6F60B0065389C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BDE618324F6F60B0065389C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 				5B79681224F7CD0300243F02 /* Codable.swift */,
 				5B79681424F7CD1500243F02 /* Cell.swift */,
 				5B79680A24F7958200243F02 /* UIImage.swift */,
+				5B79681824F7E2A000243F02 /* SearchBar.swift */,
 				5B7967ED24F78DB800243F02 /* Color.swift */,
 			);
 			path = Extensions;
@@ -147,6 +152,15 @@
 				5B7967FF24F7930600243F02 /* Strings.swift */,
 			);
 			path = Namespaces;
+			sourceTree = "<group>";
+		};
+		5B79681A24F7E67800243F02 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5B79681B24F7E68F00243F02 /* PlaceCell.swift */,
+				5BDE61A124F6F85E0065389C /* PlacesNetworkingModels.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		5BDE617524F6F60B0065389C = {
@@ -207,8 +221,8 @@
 		5BDE619A24F6F6560065389C /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				5BDE618F24F6F60C0065389C /* LaunchScreen.storyboard */,
 				5BDE618724F6F60B0065389C /* Main.storyboard */,
+				5BDE618F24F6F60C0065389C /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -216,7 +230,7 @@
 		5BDE619B24F6F8160065389C /* Places */ = {
 			isa = PBXGroup;
 			children = (
-				5BDE61A124F6F85E0065389C /* PlacesNetworkingModels.swift */,
+				5B79681A24F7E67800243F02 /* Resources */,
 				5BDE619D24F6F85E0065389C /* PlacesCoordinator.swift */,
 				5BDE619E24F6F85E0065389C /* PlacesViewController.swift */,
 				5BDE61A024F6F85E0065389C /* PlacesViewModel.swift */,
@@ -362,7 +376,9 @@
 				5B79680424F7930600243F02 /* Constants.swift in Sources */,
 				5B79680524F7930600243F02 /* Strings.swift in Sources */,
 				5B79680124F7930600243F02 /* Namespaces.swift in Sources */,
+				5B79681C24F7E68F00243F02 /* PlaceCell.swift in Sources */,
 				5B79681124F7C4F300243F02 /* AppCoordinator.swift in Sources */,
+				5B79681924F7E2A000243F02 /* SearchBar.swift in Sources */,
 				5B7967F624F78EA400243F02 /* User.swift in Sources */,
 				5BDE618C24F6F60B0065389C /* NearGoodPlaces.xcdatamodeld in Sources */,
 				5B79680224F7930600243F02 /* Funcs.swift in Sources */,
