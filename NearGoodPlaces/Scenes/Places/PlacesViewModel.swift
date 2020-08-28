@@ -11,13 +11,8 @@ import RxSwift
 class PlacesViewModel: BaseViewModel {
     
     //MARK: View state
-    var isCloseButtonTapped = false {
-        didSet {
-            if isCloseButtonTapped {
-                goNext()
-            }
-        }
-    }
+   
+    
     //MARK: Observables and Vars
     let list = PublishSubject<[ServerModels.Response.Venue]>()
     private var listHolder: [ServerModels.Response.Venue] = []

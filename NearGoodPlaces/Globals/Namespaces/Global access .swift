@@ -9,6 +9,7 @@
 import Foundation
 
 typealias Closure = () -> Void
+typealias JSONDictionary = [String: Any]
 
 func onMainQueue(_ deadline: TimeInterval = 0, doSomething: @escaping Closure) {
   DispatchQueue.main.asyncAfter(deadline: .now() + deadline) {

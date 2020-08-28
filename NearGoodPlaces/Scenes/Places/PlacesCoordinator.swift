@@ -38,11 +38,7 @@ class PlacesCoordinator: BaseCoordinator<Void> {
         
         viewModel.goNextFlag.subscribe(onNext: { _ in
             
-            if self.viewModel.isCloseButtonTapped {
-                self.rootViewController.popViewController(animated: true)
-                return
-            }
-            
+          
 //            let viewModel = ZZZViewModel()
 //            viewModel.aaa = self.viewModel.aaa
 //            let coordinator = ZZZCoordinator(rootViewController: viewController, viewModel: viewModel)

@@ -15,7 +15,7 @@ class PlacesViewController: UIViewController {
     
     //MARK: - Outlets and vars
     let disposeBag = DisposeBag()
-    var viewModel = PlacesViewModel()
+    var viewModel: PlacesViewModel?
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: - View lifecycle
@@ -23,12 +23,12 @@ class PlacesViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupBindings()
-        viewModel.viewDidLoad()
+        viewModel?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.viewWillAppear()
+        viewModel?.viewWillAppear()
     }
     
     
@@ -69,7 +69,7 @@ extension PlacesViewController {
     
     //**
     func bindIsIndicatorAnimating() {
-        viewModel.isIndicatorAnimating.subscribe(onNext: {
+        viewModel?.isIndicatorAnimating.subscribe(onNext: {
             isIndicatorAnimating in
             
         }).disposed(by: disposeBag)
@@ -77,18 +77,18 @@ extension PlacesViewController {
 
     //MARK: List Bindings
     func bindList() {
-        viewModel.list.bind(to: tableView.rx.items(cellIdentifier: PlaceCell.getReuseIdentifier, cellType: PlaceCell.self)) { [weak self] (row, item, cell) in
+        viewModel?.list.bind(to: tableView.rx.items(cellIdentifier: PlaceCell.getReuseIdentifier, cellType: PlaceCell.self)) { [weak self] (row, item, cell) in
             guard let self = self else {
                 return
             }
             cell.set(item: item)
-            self.viewModel.listReached(at: row)
+            self.viewModel?.listReached(at: row)
         }.disposed(by: disposeBag)
     }
     
     func bindListDidSelect() {
-        tableView.rx.itemSelected.subscribe(onNext: { [weak self](indexPath) in
-            self?.viewModel.didSelectItem(at: indexPath.row)
+        tableView?.rx.itemSelected.subscribe(onNext: { [weak self](indexPath) in
+            self?.viewModel?.didSelectItem(at: indexPath.row)
         }).disposed(by: disposeBag)
     }
 }

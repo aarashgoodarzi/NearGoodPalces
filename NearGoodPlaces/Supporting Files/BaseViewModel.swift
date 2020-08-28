@@ -6,9 +6,14 @@ import RxSwift
 
 class BaseViewModel {
     
+    let webservice: WebServiceProtocol
     let disposeBag = DisposeBag()
     let goNextFlag = PublishSubject<Void>()
     let isIndicatorAnimating = PublishSubject<Bool>()
+    
+    init(webservice: WebServiceProtocol) {
+        self.webservice = webservice
+    }
     
     //**
     func goNext() {

@@ -1,6 +1,6 @@
 //
 //  Container.swift
-//  CustomNavBarTest
+//  NearGoodPlaces
 //
 //  Created by Arash Goodarzi on 8/15/19.
 //  Copyright © 2019 Arash Goodarzi. All rights reserved.
@@ -19,6 +19,13 @@ enum Global {
     }
     
     enum Keys {
+        
+    }
+}
+
+//MARK: HTTPRequestHelpers
+enum HTTP {
+    enum Heplers {
         
     }
 }

@@ -1,6 +1,6 @@
 //
 //  ServerErrorModel.swift
-//  CustomNavBarTest
+//  NearGoodPlaces
 //
 //  Created by Arash Goodarzi on 8/15/19.
 //  Copyright © 2019 Arash Goodarzi. All rights reserved.

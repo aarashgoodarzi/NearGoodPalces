@@ -9,4 +9,5 @@ target 'NearGoodPlaces' do
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
   pod 'Kingfisher', '~> 5.0'
+  pod 'Alamofire', '~> 5.1'
 end
