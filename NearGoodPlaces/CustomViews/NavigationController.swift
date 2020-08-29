@@ -29,14 +29,13 @@ class NavigationController: UINavigationController {
     super.viewDidLoad()
     self.navigationBarSetting()
     self.setShadow()
-    self.navigationBar.topItem?.title = "sdfdfgfdg"
   }
   
   //**
   private func setShadow() {
     self.navigationBar.layer.masksToBounds = false
     self.navigationBar.layer.shadowColor = UIColor.white.cgColor
-    self.navigationBar.layer.shadowOpacity = 0.3
+    self.navigationBar.layer.shadowOpacity = 0.1
     self.navigationBar.layer.shadowRadius = 2.0
     self.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 1.0)
   }
@@ -45,6 +44,8 @@ class NavigationController: UINavigationController {
   //**
   func navigationBarSetting() {
     
+    let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+    navigationBar.titleTextAttributes = textAttributes
     let navBarAppearance = UINavigationBar.appearance()
     navBarAppearance.tintColor = .white
     navBarAppearance.barTintColor = .navBarColor

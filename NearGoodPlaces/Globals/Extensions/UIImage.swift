@@ -20,11 +20,15 @@ extension UIImageView {
         self.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "logo.pdf"))
     }
     
-    func downloadImage(from icon: ServerModels.Response.Icon, size: Int = 200, ext: String = "jpg") {
-        guard let prefix = icon.iconPrefix, let suffix = icon.suffix else {
+    func downloadImage(from icon: ServerModels.Response.Icon, size: Int = 200) {
+        guard let prefix = icon.prefix, let suffix = icon.suffix else {
             return
         }
-        let urlString = prefix + String(size) + suffix + "." + ext
+        //suffixes just includes image file extension!
+        guard suffix.count > 4 else {
+            return
+        }
+        let urlString = prefix + "/300x500/" + suffix
         guard let url = URL(string: urlString) else {
             return
         }

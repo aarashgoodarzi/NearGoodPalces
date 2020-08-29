@@ -51,9 +51,7 @@ class PlacesViewController: UIViewController {
     
     //**
     func prepareNavBar() {
-        self.navigationItem.title = "Near Good places"
-        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        self.navigationItem.title = "Near Good Places"
     }
     
     //**

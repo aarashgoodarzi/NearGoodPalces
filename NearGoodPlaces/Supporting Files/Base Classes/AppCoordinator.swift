@@ -27,11 +27,11 @@ class AppCoordinator: BaseCoordinator<Void> {
         let webservice = WebServcie()
         let viewModel = PlacesViewModel(webservice: webservice)
         viewController.viewModel = viewModel
-        let navControlller = UINavigationController(rootViewController: viewController)
+        let navControlller = NavigationController(rootViewController: viewController)
         let coordinator = PlacesCoordinator(rootViewController: navControlller,viewModel: viewModel)
         self.coordinate(to: coordinator).subscribe().disposed(by: self.disposeBag)
         
-        window.rootViewController = viewController
+        window.rootViewController = navControlller
         window.makeKeyAndVisible()
         
         return Observable.never()

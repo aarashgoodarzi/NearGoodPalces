@@ -12,8 +12,26 @@ import Foundation
 extension ServerModels.Response {
     
     struct Explore: Codable {
+     
         let meta: Meta?
-        let response: Response?
+        var response: Response?
+        
+        //TEMP
+//        //MARK: paginator
+//        typealias Element = ServerModels.Response.GroupItem
+//        var list: [Element] {
+//            return (response?.groups?.first?.items) ?? []
+//        }
+//
+//        var hasNextPage: Bool {
+//            return !list.isEmpty
+//        }
+//
+//        mutating func append(contentsOf list: [ServerModels.Response.GroupItem]) {
+//            if response?.groups?.first != nil {
+//                response?.groups?[0].items?.append(contentsOf: list)
+//            }
+//        }
     }
 
     // MARK: - Meta
@@ -29,7 +47,7 @@ extension ServerModels.Response {
         let headerLocation, headerFullLocation, headerLocationGranularity: String?
         let totalResults: Int?
         let suggestedBounds: [String: LabeledLatLng]?
-        let groups: [Group]?
+        var groups: [Group]?
     }
 
     // MARK: - Warning
@@ -46,7 +64,7 @@ extension ServerModels.Response {
     // MARK: - Group
     struct Group: Codable {
         let type, name: String?
-        let items: [GroupItem]?
+        var items: [GroupItem]?
     }
 
     // MARK: - GroupItem
@@ -84,7 +102,7 @@ extension ServerModels.Response {
 
     // MARK: - Icon
     struct Icon: Codable {
-        let iconPrefix: String?
+        let prefix: String?
         let suffix: String?
     }
 

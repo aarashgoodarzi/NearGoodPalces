@@ -29,8 +29,8 @@ class PlacesCoordinator: BaseCoordinator<Void> {
     
     //**
     private func setupVc() {
-        viewController.viewModel = self.viewModel
-        rootViewController.pushViewController(viewController, animated: true)
+//        viewController.viewModel = self.viewModel
+//        rootViewController.pushViewController(viewController, animated: true)
     }
     
     //**
