@@ -67,6 +67,7 @@ extension HTTP {
             return HTTPHeaders(headers)
         }
         
+        //MARK: parameters
         var parameters: JSONDictionary? {
             if httpMethod == .GET {
                 return _parameters

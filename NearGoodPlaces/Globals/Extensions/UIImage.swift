@@ -21,7 +21,10 @@ extension UIImageView {
     }
     
     func downloadImage(from icon: ServerModels.Response.Icon, size: Int = 200, ext: String = "jpg") {
-        let urlString = icon.iconPrefix + String(size) + icon.suffix + "." + ext
+        guard let prefix = icon.iconPrefix, let suffix = icon.suffix else {
+            return
+        }
+        let urlString = prefix + String(size) + suffix + "." + ext
         guard let url = URL(string: urlString) else {
             return
         }

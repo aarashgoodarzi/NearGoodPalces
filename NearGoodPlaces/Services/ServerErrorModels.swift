@@ -11,32 +11,38 @@ import Foundation
 
 protocol ErrorMessage: Error {
     func getMessage() -> String
-    func showMessage()
-}
-
-protocol ErrorStatusCode: Error {
+    func logMessage()
     func getStatusCode() -> Int
 }
 
+
 extension ServerModels.Response {
-    
     
     struct ServerError: Codable,Error,ErrorMessage {
         
+        let meta: Meta
+        let response: Response
+        
+        // MARK: - Meta
+        struct Meta: Codable {
+            let code: Int
+            let requestId, errorDetail, errorType: String
+        }
+        
+        // MARK: - Response
+        struct Response: Codable {
+        }
+        
         func getMessage() -> String {
-            return message
+            return meta.errorDetail
         }
         
-        func showMessage() {
-            Global.Funcs.log(message, type: .error)
-        }
-        let errors: [Error]
-        var message: String {
-            return "An error occured!"
+        func logMessage() {
+            Global.Funcs.log(meta.errorDetail, type: .error)
         }
         
-        struct Error: Codable {
-            let code: String
+        func getStatusCode() -> Int {
+            return meta.code
         }
     }
     

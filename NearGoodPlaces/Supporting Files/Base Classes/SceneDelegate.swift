@@ -30,10 +30,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.overrideUserInterfaceStyle = .light
     }
     
-//    @available(iOS 13.0, *)
-//    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-//        let deepLink = DeepLinkManager(urlContexts: URLContexts)
-//        deepLink.perform()
-//    }
     
 }

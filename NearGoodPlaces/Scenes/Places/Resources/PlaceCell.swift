@@ -17,9 +17,9 @@ class PlaceCell: UITableViewCell {
     
     func set(item: ServerModels.Response.Venue) {
         name.text = item.name
-        popularity.text = String(item.popularityByGeo)
-        distance.text = String(item.location.distance)
-        if let icon = item.categories.first?.icon {
+        popularity.text = String((item.popularityByGeo ?? 0))
+        distance.text = String((item.location?.distance ?? 0))
+        if let icon = item.categories?.first?.icon {
             self.placeImage.downloadImage(from: icon)
         }
     }

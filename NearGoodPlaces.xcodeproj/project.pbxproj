@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B57F06D24FA420200B0B639 /* PlacesHTTPHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B57F06824FA420200B0B639 /* PlacesHTTPHelpers.swift */; };
 		5B7967EC24F7869100243F02 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7967EB24F7869100243F02 /* NavigationController.swift */; };
 		5B7967EE24F78DB800243F02 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7967ED24F78DB800243F02 /* Color.swift */; };
 		5B7967F424F78EA400243F02 /* KeychainProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7967F024F78EA400243F02 /* KeychainProvider.swift */; };
@@ -21,13 +22,14 @@
 		5B79680924F7950E00243F02 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79680724F7950E00243F02 /* BaseViewModel.swift */; };
 		5B79680B24F7958200243F02 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79680A24F7958200243F02 /* UIImage.swift */; };
 		5B79680D24F7BEFF00243F02 /* Global access .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79680C24F7BEFF00243F02 /* Global access .swift */; };
-		5B79680F24F7C49100243F02 /* ServerBaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79680E24F7C49100243F02 /* ServerBaseModels.swift */; };
+		5B79680F24F7C49100243F02 /* ServerErrorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79680E24F7C49100243F02 /* ServerErrorModels.swift */; };
 		5B79681124F7C4F300243F02 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79681024F7C4F300243F02 /* AppCoordinator.swift */; };
 		5B79681324F7CD0300243F02 /* Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79681224F7CD0300243F02 /* Codable.swift */; };
 		5B79681524F7CD1500243F02 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79681424F7CD1500243F02 /* Cell.swift */; };
 		5B79681724F7CE2D00243F02 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79681624F7CE2D00243F02 /* Data.swift */; };
 		5B79681924F7E2A000243F02 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79681824F7E2A000243F02 /* SearchBar.swift */; };
 		5B79681C24F7E68F00243F02 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79681B24F7E68F00243F02 /* PlaceCell.swift */; };
+		5B91711424FA95160092FA48 /* ConvenienceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B91711324FA95160092FA48 /* ConvenienceModels.swift */; };
 		5BA3C21024F927EE00FFDEDB /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3C20A24F927EE00FFDEDB /* WebService.swift */; };
 		5BA3C21124F927EE00FFDEDB /* HTTPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3C20C24F927EE00FFDEDB /* HTTPConstants.swift */; };
 		5BA3C21224F927EE00FFDEDB /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3C20D24F927EE00FFDEDB /* HTTPRequest.swift */; };
@@ -47,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		1161C23C62382196E1F353D0 /* Pods-NearGoodPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearGoodPlaces.release.xcconfig"; path = "Target Support Files/Pods-NearGoodPlaces/Pods-NearGoodPlaces.release.xcconfig"; sourceTree = "<group>"; };
+		5B57F06824FA420200B0B639 /* PlacesHTTPHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesHTTPHelpers.swift; sourceTree = "<group>"; };
 		5B7967EB24F7869100243F02 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		5B7967ED24F78DB800243F02 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		5B7967F024F78EA400243F02 /* KeychainProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainProvider.swift; sourceTree = "<group>"; };
@@ -61,13 +64,14 @@
 		5B79680724F7950E00243F02 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		5B79680A24F7958200243F02 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		5B79680C24F7BEFF00243F02 /* Global access .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Global access .swift"; sourceTree = "<group>"; };
-		5B79680E24F7C49100243F02 /* ServerBaseModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServerBaseModels.swift; path = ../ServerBaseModels.swift; sourceTree = "<group>"; };
+		5B79680E24F7C49100243F02 /* ServerErrorModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServerErrorModels.swift; path = ../ServerErrorModels.swift; sourceTree = "<group>"; };
 		5B79681024F7C4F300243F02 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		5B79681224F7CD0300243F02 /* Codable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Codable.swift; sourceTree = "<group>"; };
 		5B79681424F7CD1500243F02 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		5B79681624F7CE2D00243F02 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		5B79681824F7E2A000243F02 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		5B79681B24F7E68F00243F02 /* PlaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
+		5B91711324FA95160092FA48 /* ConvenienceModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenienceModels.swift; sourceTree = "<group>"; };
 		5BA3C20A24F927EE00FFDEDB /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		5BA3C20C24F927EE00FFDEDB /* HTTPConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPConstants.swift; sourceTree = "<group>"; };
 		5BA3C20D24F927EE00FFDEDB /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
@@ -107,6 +111,18 @@
 				1161C23C62382196E1F353D0 /* Pods-NearGoodPlaces.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		5B57BB5424FA81E30068637F /* Base Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5B79681024F7C4F300243F02 /* AppCoordinator.swift */,
+				5B79680624F7950E00243F02 /* BaseCoordinator.swift */,
+				5B79680724F7950E00243F02 /* BaseViewModel.swift */,
+				5BDE618124F6F60B0065389C /* AppDelegate.swift */,
+				5BDE618324F6F60B0065389C /* SceneDelegate.swift */,
+			);
+			path = "Base Classes";
 			sourceTree = "<group>";
 		};
 		5B7967E724F7856A00243F02 /* Extensions */ = {
@@ -166,7 +182,9 @@
 			isa = PBXGroup;
 			children = (
 				5B79681B24F7E68F00243F02 /* PlaceCell.swift */,
+				5B57F06824FA420200B0B639 /* PlacesHTTPHelpers.swift */,
 				5BDE61A124F6F85E0065389C /* PlacesNetworkingModels.swift */,
+				5B91711324FA95160092FA48 /* ConvenienceModels.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -177,7 +195,7 @@
 				5BA3C20C24F927EE00FFDEDB /* HTTPConstants.swift */,
 				5BA3C20D24F927EE00FFDEDB /* HTTPRequest.swift */,
 				5BA3C20E24F927EE00FFDEDB /* URLPath.swift */,
-				5B79680E24F7C49100243F02 /* ServerBaseModels.swift */,
+				5B79680E24F7C49100243F02 /* ServerErrorModels.swift */,
 			);
 			path = WebServiceModels;
 			sourceTree = "<group>";
@@ -225,11 +243,7 @@
 		5BDE619924F6F6440065389C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5B79681024F7C4F300243F02 /* AppCoordinator.swift */,
-				5B79680624F7950E00243F02 /* BaseCoordinator.swift */,
-				5B79680724F7950E00243F02 /* BaseViewModel.swift */,
-				5BDE618124F6F60B0065389C /* AppDelegate.swift */,
-				5BDE618324F6F60B0065389C /* SceneDelegate.swift */,
+				5B57BB5424FA81E30068637F /* Base Classes */,
 				5BDE618A24F6F60B0065389C /* NearGoodPlaces.xcdatamodeld */,
 				5BDE618D24F6F60C0065389C /* Assets.xcassets */,
 				5BDE619224F6F60C0065389C /* Info.plist */,
@@ -405,16 +419,18 @@
 				5BDE618C24F6F60B0065389C /* NearGoodPlaces.xcdatamodeld in Sources */,
 				5B79680224F7930600243F02 /* Funcs.swift in Sources */,
 				5BDE61A624F6F85E0065389C /* PlacesNetworkingModels.swift in Sources */,
+				5B91711424FA95160092FA48 /* ConvenienceModels.swift in Sources */,
 				5B79681524F7CD1500243F02 /* Cell.swift in Sources */,
 				5B7967EE24F78DB800243F02 /* Color.swift in Sources */,
 				5B7967F724F78EA400243F02 /* ReachabilityProvider.swift in Sources */,
 				5B7967F524F78EA400243F02 /* Storyboard.swift in Sources */,
+				5B57F06D24FA420200B0B639 /* PlacesHTTPHelpers.swift in Sources */,
 				5B7967EC24F7869100243F02 /* NavigationController.swift in Sources */,
 				5B79680D24F7BEFF00243F02 /* Global access .swift in Sources */,
 				5BDE61A324F6F85E0065389C /* PlacesViewController.swift in Sources */,
 				5BA3C21124F927EE00FFDEDB /* HTTPConstants.swift in Sources */,
 				5B79680924F7950E00243F02 /* BaseViewModel.swift in Sources */,
-				5B79680F24F7C49100243F02 /* ServerBaseModels.swift in Sources */,
+				5B79680F24F7C49100243F02 /* ServerErrorModels.swift in Sources */,
 				5BA3C21024F927EE00FFDEDB /* WebService.swift in Sources */,
 				5B79681724F7CE2D00243F02 /* Data.swift in Sources */,
 				5B7967F424F78EA400243F02 /* KeychainProvider.swift in Sources */,

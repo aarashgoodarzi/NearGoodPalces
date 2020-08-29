@@ -17,6 +17,13 @@ class PlacesViewController: UIViewController {
     let disposeBag = DisposeBag()
     var viewModel: PlacesViewModel?
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var hintLabel: UILabel!
+    @IBOutlet weak var retryButton: UIButton!
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     //MARK: - View lifecycle
     override func viewDidLoad() {
@@ -48,10 +55,11 @@ class PlacesViewController: UIViewController {
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
-
+    
     //**
     func prepareTableView() {
         tableView.tableFooterView = UIView()
+        tableView.separatorColor = UIColor.white.withAlphaComponent(0.2)
     }
     
     //end of class
@@ -62,19 +70,29 @@ extension PlacesViewController {
     
     //Mark: setupBindings
     func setupBindings() {
-        bindIsIndicatorAnimating()
+        bindIndicator()
         bindList()
         bindListDidSelect()
+        bindRetryButton()
+        bindHint()
     }
     
     //**
-    func bindIsIndicatorAnimating() {
-        viewModel?.isIndicatorAnimating.subscribe(onNext: {
-            isIndicatorAnimating in
-            
+    func bindIndicator() {
+        viewModel?.isIndocatorAnimating.bind(to: indicator.rx.isAnimating).disposed(by: disposeBag)
+    }
+    
+    //**
+    func bindHint() {
+        viewModel?.hint.subscribe(onNext: { [weak self ] hint in
+            guard let self = self else {
+                return
+            }
+            self.hintLabel.text = hint.value
+            self.retryButton.isHidden = hint.isNone
         }).disposed(by: disposeBag)
     }
-
+    
     //MARK: List Bindings
     func bindList() {
         viewModel?.list.bind(to: tableView.rx.items(cellIdentifier: PlaceCell.getReuseIdentifier, cellType: PlaceCell.self)) { [weak self] (row, item, cell) in
@@ -89,6 +107,12 @@ extension PlacesViewController {
     func bindListDidSelect() {
         tableView?.rx.itemSelected.subscribe(onNext: { [weak self](indexPath) in
             self?.viewModel?.didSelectItem(at: indexPath.row)
+        }).disposed(by: disposeBag)
+    }
+    
+    func bindRetryButton() {
+        retryButton.rx.tap.subscribe(onNext: { [weak self]_ in
+            self?.viewModel?.retryButtonTapped()
         }).disposed(by: disposeBag)
     }
 }

@@ -9,7 +9,7 @@ class BaseViewModel {
     let webservice: WebServiceProtocol
     let disposeBag = DisposeBag()
     let goNextFlag = PublishSubject<Void>()
-    let isIndicatorAnimating = PublishSubject<Bool>()
+    let isIndocatorAnimating = PublishSubject<Bool>()
     
     init(webservice: WebServiceProtocol) {
         self.webservice = webservice
@@ -61,7 +61,7 @@ class BaseViewModel {
     
     internal func serverError(error: ErrorMessage?, isAlertEnabled: Bool, completion: Closure?) {
         if isAlertEnabled {
-            error?.showMessage()
+            error?.logMessage()
         }
         completion?()
     }

@@ -10,9 +10,9 @@ import Foundation
 import Alamofire
 
 
-//MARK: - Web Service Provider
-protocol WebServiceProtocol {
-    mutating func request<T: Codable>(_ request: HTTP.Request<T>, completion: @escaping (_ result: Result<T,Error>) -> Void )
+//MARK: - Web Service Protocol
+protocol WebServiceProtocol: class {
+    func request<T: Codable>(_ request: HTTP.Request<T>, completion: @escaping (_ result: Result<T,Error>) -> Void )
     func cancelAllRequests()
 }
 
@@ -49,7 +49,7 @@ class WebServcie: WebServiceProtocol {
         request.callCounter -= 1
         increaseNetworkActivity()
         AF.sessionConfiguration.timeoutIntervalForRequest = request.timeout.rawValue
-        AF.request(request.getURL, method: request.alamofireHTTPMethod, parameters: request.parameters, encoding: URLEncoding.default, headers: request.alamofireHTTPHeaders, interceptor: nil, requestModifier: nil)
+        AF.request(request.getURL, method: request.alamofireHTTPMethod, parameters: request.parameters, encoding: request.alamofireParameterEncoding, headers: request.alamofireHTTPHeaders, interceptor: nil, requestModifier: nil)
             .validate(statusCode: request.validStatusCodes)
             .responseJSON { [weak self](response) in
             self?.handleDataResponse(request, response: response, completion: completion)

@@ -25,7 +25,7 @@ enum Global {
 
 //MARK: HTTPRequestHelpers
 enum HTTP {
-    enum Heplers {
+    enum Helpers {
         
     }
 }

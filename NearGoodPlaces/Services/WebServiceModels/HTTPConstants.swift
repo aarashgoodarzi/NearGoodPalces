@@ -83,9 +83,6 @@ extension HTTP {
     
     //**
     static var baseHeaders: [String: String] {
-        if User.Token.access == nil {
-            Global.Funcs.log("No token provided!")
-        }
         return [HTTP.Headers.Authorization: User.Token.access ?? ""]
     }
     
