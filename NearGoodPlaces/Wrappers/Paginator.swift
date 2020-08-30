@@ -31,7 +31,8 @@ struct Paginator<T> {
     }
     
     var offset: Int {
-        let offset = count == 0 ? 0 : currentPage * pageSize
+        let _offset = count == 0 ? 0 : currentPage * pageSize
+        let offset = _offset > count ? count : _offset
         return offset
     }
     
@@ -66,10 +67,7 @@ struct Paginator<T> {
     }
   
     func listReached(at index: Int) {
-        print(hasNextPage)
         if index == count - 1, hasNextPage { // last row
-            let _offset = count == 0 ? 0 : currentPage * pageSize
-            let offset = _offset > count ? count : _offset
             onNextPageListener?(offset)
         }
     }

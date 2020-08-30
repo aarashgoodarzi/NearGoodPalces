@@ -9,7 +9,7 @@
 import Foundation
 import Security
 
-struct KeychainProvider {
+struct Keychain {
     
     // Arguments for the keychain queries
     private static let kSecClassValue = String(kSecClass)
@@ -75,7 +75,7 @@ struct KeychainProvider {
     }
     
     static func clearAll() {
-        Global.Keys.all.forEach { KeychainProvider.removeValueFor(key: $0) }
+        Global.Keys.all.forEach { Keychain.removeValueFor(key: $0) }
     }
 }
 
@@ -84,14 +84,18 @@ extension Global.Keys {
     static let firstRun = "firstRun"
     //*
     static let accessToken = "accessToken"
-    static let AuthUTMSourceQueryValue = "spotify-sdk"
-    static let AuthUTMMediumCampaignQueryValue = "spotifylogin"
-    static let KeychainUsernameKey = "SpotifyUsername"
-    static let KeychainServiceValue = "com.spotify.SpotifyLogin"
+    static let AuthUTMSourceQueryValue = "ngp-sdk"
+    static let AuthUTMMediumCampaignQueryValue = "ngp"
+    static let KeychainUsernameKey = "ngpUsername"
+    static let KeychainServiceValue = "com.ngp.ngp"
+    //*
+    static let location = "location"
+    static let savedPlacesList = "savedPlacesList"
     //*
     static var all: [String] {
         return [
             accessToken,
+            location,
         ]
     }
 }

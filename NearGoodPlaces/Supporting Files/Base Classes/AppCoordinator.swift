@@ -24,8 +24,11 @@ class AppCoordinator: BaseCoordinator<Void> {
     //**
     override func start() -> Observable<Void> {
         let viewController = PlacesViewController.instantiateFrom(storyboard: .main)
+        let map = Map()
+        let paginator = Paginator<ServerModels.Response.Venue>()
+        let listManager = ListManager(map: map, paginator: paginator)
         let webservice = WebServcie()
-        let viewModel = PlacesViewModel(webservice: webservice)
+        let viewModel = PlacesViewModel(webservice: webservice, listManager: listManager)
         viewController.viewModel = viewModel
         let navControlller = NavigationController(rootViewController: viewController)
         let coordinator = PlacesCoordinator(rootViewController: navControlller,viewModel: viewModel)

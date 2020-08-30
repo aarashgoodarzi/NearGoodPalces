@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B51027524FB97370076FA41 /* ListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51027424FB97370076FA41 /* ListManager.swift */; };
+		5B51027724FB979B0076FA41 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51027624FB979B0076FA41 /* DataBase.swift */; };
+		5B51027924FB97B50076FA41 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51027824FB97B50076FA41 /* Map.swift */; };
 		5B57F06D24FA420200B0B639 /* PlacesHTTPHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B57F06824FA420200B0B639 /* PlacesHTTPHelpers.swift */; };
 		5B7967EC24F7869100243F02 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7967EB24F7869100243F02 /* NavigationController.swift */; };
 		5B7967EE24F78DB800243F02 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7967ED24F78DB800243F02 /* Color.swift */; };
-		5B7967F424F78EA400243F02 /* KeychainProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7967F024F78EA400243F02 /* KeychainProvider.swift */; };
+		5B7967F424F78EA400243F02 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7967F024F78EA400243F02 /* Keychain.swift */; };
 		5B7967F524F78EA400243F02 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7967F124F78EA400243F02 /* Storyboard.swift */; };
 		5B7967F624F78EA400243F02 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7967F224F78EA400243F02 /* User.swift */; };
 		5B7967F724F78EA400243F02 /* ReachabilityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7967F324F78EA400243F02 /* ReachabilityProvider.swift */; };
@@ -45,15 +48,19 @@
 		5BDE61A324F6F85E0065389C /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE619E24F6F85E0065389C /* PlacesViewController.swift */; };
 		5BDE61A524F6F85E0065389C /* PlacesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE61A024F6F85E0065389C /* PlacesViewModel.swift */; };
 		5BDE61A624F6F85E0065389C /* PlacesNetworkingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE61A124F6F85E0065389C /* PlacesNetworkingModels.swift */; };
+		5BFD4A6824FC3EE1004F5A89 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFD4A6724FC3EE1004F5A89 /* Connectivity.swift */; };
 		B028123D19D95FF4EB4FAAAD /* Pods_NearGoodPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C27BF50647E60E41F48EC6 /* Pods_NearGoodPlaces.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1161C23C62382196E1F353D0 /* Pods-NearGoodPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearGoodPlaces.release.xcconfig"; path = "Target Support Files/Pods-NearGoodPlaces/Pods-NearGoodPlaces.release.xcconfig"; sourceTree = "<group>"; };
+		5B51027424FB97370076FA41 /* ListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListManager.swift; sourceTree = "<group>"; };
+		5B51027624FB979B0076FA41 /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
+		5B51027824FB97B50076FA41 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		5B57F06824FA420200B0B639 /* PlacesHTTPHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesHTTPHelpers.swift; sourceTree = "<group>"; };
 		5B7967EB24F7869100243F02 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		5B7967ED24F78DB800243F02 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		5B7967F024F78EA400243F02 /* KeychainProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainProvider.swift; sourceTree = "<group>"; };
+		5B7967F024F78EA400243F02 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		5B7967F124F78EA400243F02 /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		5B7967F224F78EA400243F02 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5B7967F324F78EA400243F02 /* ReachabilityProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityProvider.swift; sourceTree = "<group>"; };
@@ -90,6 +97,7 @@
 		5BDE619E24F6F85E0065389C /* PlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		5BDE61A024F6F85E0065389C /* PlacesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewModel.swift; sourceTree = "<group>"; };
 		5BDE61A124F6F85E0065389C /* PlacesNetworkingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesNetworkingModels.swift; sourceTree = "<group>"; };
+		5BFD4A6724FC3EE1004F5A89 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		99C27BF50647E60E41F48EC6 /* Pods_NearGoodPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NearGoodPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1374DDF34A59FDF59187D8 /* Pods-NearGoodPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearGoodPlaces.debug.xcconfig"; path = "Target Support Files/Pods-NearGoodPlaces/Pods-NearGoodPlaces.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,11 +159,14 @@
 		5B7967EF24F78E4300243F02 /* Wrappers */ = {
 			isa = PBXGroup;
 			children = (
-				5B7967F024F78EA400243F02 /* KeychainProvider.swift */,
+				5B7967F224F78EA400243F02 /* User.swift */,
+				5B7967F024F78EA400243F02 /* Keychain.swift */,
 				5B91711524FAA0220092FA48 /* Paginator.swift */,
 				5B7967F324F78EA400243F02 /* ReachabilityProvider.swift */,
 				5B7967F124F78EA400243F02 /* Storyboard.swift */,
-				5B7967F224F78EA400243F02 /* User.swift */,
+				5B51027624FB979B0076FA41 /* DataBase.swift */,
+				5B51027824FB97B50076FA41 /* Map.swift */,
+				5BFD4A6724FC3EE1004F5A89 /* Connectivity.swift */,
 			);
 			path = Wrappers;
 			sourceTree = "<group>";
@@ -187,6 +198,7 @@
 				5B79681B24F7E68F00243F02 /* PlaceCell.swift */,
 				5B57F06824FA420200B0B639 /* PlacesHTTPHelpers.swift */,
 				5BDE61A124F6F85E0065389C /* PlacesNetworkingModels.swift */,
+				5B51027424FB97370076FA41 /* ListManager.swift */,
 				5B91711324FA95160092FA48 /* ConvenienceModels.swift */,
 			);
 			path = Resources;
@@ -407,12 +419,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BDE618224F6F60B0065389C /* AppDelegate.swift in Sources */,
+				5B51027524FB97370076FA41 /* ListManager.swift in Sources */,
 				5B79680B24F7958200243F02 /* UIImage.swift in Sources */,
 				5B79681324F7CD0300243F02 /* Codable.swift in Sources */,
 				5B79680824F7950E00243F02 /* BaseCoordinator.swift in Sources */,
 				5B79680424F7930600243F02 /* Constants.swift in Sources */,
 				5B79680524F7930600243F02 /* Strings.swift in Sources */,
 				5B79680124F7930600243F02 /* Namespaces.swift in Sources */,
+				5BFD4A6824FC3EE1004F5A89 /* Connectivity.swift in Sources */,
 				5B79681C24F7E68F00243F02 /* PlaceCell.swift in Sources */,
 				5BA3C21324F927EE00FFDEDB /* URLPath.swift in Sources */,
 				5B79681124F7C4F300243F02 /* AppCoordinator.swift in Sources */,
@@ -421,6 +435,7 @@
 				5B7967F624F78EA400243F02 /* User.swift in Sources */,
 				5BDE618C24F6F60B0065389C /* NearGoodPlaces.xcdatamodeld in Sources */,
 				5B79680224F7930600243F02 /* Funcs.swift in Sources */,
+				5B51027724FB979B0076FA41 /* DataBase.swift in Sources */,
 				5BDE61A624F6F85E0065389C /* PlacesNetworkingModels.swift in Sources */,
 				5B91711424FA95160092FA48 /* ConvenienceModels.swift in Sources */,
 				5B79681524F7CD1500243F02 /* Cell.swift in Sources */,
@@ -432,12 +447,13 @@
 				5B79680D24F7BEFF00243F02 /* Global access .swift in Sources */,
 				5B91711624FAA0220092FA48 /* Paginator.swift in Sources */,
 				5BDE61A324F6F85E0065389C /* PlacesViewController.swift in Sources */,
+				5B51027924FB97B50076FA41 /* Map.swift in Sources */,
 				5BA3C21124F927EE00FFDEDB /* HTTPConstants.swift in Sources */,
 				5B79680924F7950E00243F02 /* BaseViewModel.swift in Sources */,
 				5B79680F24F7C49100243F02 /* ServerErrorModels.swift in Sources */,
 				5BA3C21024F927EE00FFDEDB /* WebService.swift in Sources */,
 				5B79681724F7CE2D00243F02 /* Data.swift in Sources */,
-				5B7967F424F78EA400243F02 /* KeychainProvider.swift in Sources */,
+				5B7967F424F78EA400243F02 /* Keychain.swift in Sources */,
 				5BDE61A524F6F85E0065389C /* PlacesViewModel.swift in Sources */,
 				5BDE61A224F6F85E0065389C /* PlacesCoordinator.swift in Sources */,
 				5BDE618424F6F60B0065389C /* SceneDelegate.swift in Sources */,

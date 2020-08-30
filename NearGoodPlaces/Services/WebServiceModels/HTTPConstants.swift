@@ -83,7 +83,7 @@ extension HTTP {
     
     //**
     static var baseHeaders: [String: String] {
-        return [HTTP.Headers.Authorization: User.Token.access ?? ""]
+        return [:]
     }
     
 }
