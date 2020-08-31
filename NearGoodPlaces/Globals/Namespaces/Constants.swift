@@ -11,4 +11,5 @@ import Foundation
 extension Global.Constants {
     static let ThrottleMS = 700
     static let pageSize = 20
+    static let locationThreshold = 2
 }

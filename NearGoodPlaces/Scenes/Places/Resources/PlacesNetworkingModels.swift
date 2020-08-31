@@ -12,26 +12,8 @@ import Foundation
 extension ServerModels.Response {
     
     struct Explore: Codable {
-     
         let meta: Meta?
         var response: Response?
-        
-        //TEMP
-//        //MARK: paginator
-//        typealias Element = ServerModels.Response.GroupItem
-//        var list: [Element] {
-//            return (response?.groups?.first?.items) ?? []
-//        }
-//
-//        var hasNextPage: Bool {
-//            return !list.isEmpty
-//        }
-//
-//        mutating func append(contentsOf list: [ServerModels.Response.GroupItem]) {
-//            if response?.groups?.first != nil {
-//                response?.groups?[0].items?.append(contentsOf: list)
-//            }
-//        }
     }
 
     // MARK: - Meta

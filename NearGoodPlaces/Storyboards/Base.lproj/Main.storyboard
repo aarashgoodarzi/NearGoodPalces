@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qbg-Ue-o4y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qbg-Ue-o4y">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -96,24 +96,27 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EHH-gc-hGl">
-                                <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EHH-gc-hGl">
+                                <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxN-K6-qJt" userLabel="hintLabel">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqg-Zu-thx" userLabel="Retry">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="0.0"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="Retry"/>
+                                        <connections>
+                                            <action selector="retryButtonTapped:" destination="Mym-po-Cng" eventType="touchUpInside" id="J8U-vW-sa4"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="yBr-Fb-04F"/>
-                                    <constraint firstAttribute="width" constant="100" id="yFx-6D-l9A"/>
+                                    <constraint firstAttribute="width" secondItem="EHH-gc-hGl" secondAttribute="height" multiplier="1:1" id="Mfv-0Q-s3d"/>
+                                    <constraint firstAttribute="width" constant="300" id="yFx-6D-l9A"/>
                                 </constraints>
                             </stackView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="HM2-TT-W0l">
@@ -136,8 +139,8 @@
                     <navigationItem key="navigationItem" id="3XN-O9-UaG"/>
                     <connections>
                         <outlet property="hintLabel" destination="sxN-K6-qJt" id="pRm-RX-Emi"/>
+                        <outlet property="hintStackview" destination="EHH-gc-hGl" id="Vr4-Uk-QGC"/>
                         <outlet property="indicator" destination="HM2-TT-W0l" id="fR3-l2-S5n"/>
-                        <outlet property="retryButton" destination="qqg-Zu-thx" id="mgq-54-HEb"/>
                         <outlet property="tableView" destination="qtI-y4-REi" id="Sbf-1z-3PD"/>
                     </connections>
                 </viewController>

@@ -19,8 +19,7 @@ class PlacesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var hintLabel: UILabel!
-    @IBOutlet weak var retryButton: UIButton!
-    
+    @IBOutlet weak var hintStackview: UIStackView!
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -34,7 +33,9 @@ class PlacesViewController: UIViewController {
     }
     
     //MARK: - Actions
-    
+    @IBAction func retryButtonTapped(_ sender: Any) {
+        viewModel?.retryButtonTapped()
+    }
     
     //MARK: - Methods
     func setupUI() {
@@ -64,7 +65,6 @@ extension PlacesViewController {
         bindIndicator()
         bindList()
         bindListDidSelect()
-        bindRetryButton()
         bindHint()
     }
     
@@ -80,13 +80,16 @@ extension PlacesViewController {
                 return
             }
             self.hintLabel.text = hint.value
-            self.retryButton.isHidden = hint.isNone
+            self.hintStackview.isHidden = hint.isNone
         }).disposed(by: disposeBag)
     }
     
     //MARK: List Bindings
     func bindList() {
-        viewModel?.list.bind(to: tableView.rx.items(cellIdentifier: PlaceCell.getReuseIdentifier, cellType: PlaceCell.self)) { [weak self] (row, item, cell) in
+        viewModel?
+            .list
+            .throttle(.milliseconds(Global.Constants.ThrottleMS), scheduler: MainScheduler.instance)
+            .bind(to: tableView.rx.items(cellIdentifier: PlaceCell.getReuseIdentifier, cellType: PlaceCell.self)) { [weak self] (row, item, cell) in
             guard let self = self else {
                 return
             }
@@ -98,12 +101,6 @@ extension PlacesViewController {
     func bindListDidSelect() {
         tableView?.rx.itemSelected.subscribe(onNext: { [weak self](indexPath) in
             self?.viewModel?.didSelectItem(at: indexPath.row)
-        }).disposed(by: disposeBag)
-    }
-    
-    func bindRetryButton() {
-        retryButton.rx.tap.subscribe(onNext: { [weak self]_ in
-            self?.viewModel?.retryButtonTapped()
         }).disposed(by: disposeBag)
     }
 }

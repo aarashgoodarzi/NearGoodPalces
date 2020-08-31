@@ -10,8 +10,6 @@ import Foundation
 
 typealias Closure = () -> Void
 typealias JSONDictionary = [String: Any]
-typealias ListClosure = (_ list: [ServerModels.Response.Venue]) -> Void
-typealias LocationClosure = (_ location: Location) -> Void
 
 func onMainQueue(_ deadline: TimeInterval = 0, doSomething: @escaping Closure) {
   DispatchQueue.main.asyncAfter(deadline: .now() + deadline) {

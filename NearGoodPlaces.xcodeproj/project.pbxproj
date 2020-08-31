@@ -9,14 +9,13 @@
 /* Begin PBXBuildFile section */
 		5B51027524FB97370076FA41 /* ListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51027424FB97370076FA41 /* ListManager.swift */; };
 		5B51027724FB979B0076FA41 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51027624FB979B0076FA41 /* DataBase.swift */; };
-		5B51027924FB97B50076FA41 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51027824FB97B50076FA41 /* Map.swift */; };
+		5B51027924FB97B50076FA41 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51027824FB97B50076FA41 /* LocationService.swift */; };
 		5B57F06D24FA420200B0B639 /* PlacesHTTPHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B57F06824FA420200B0B639 /* PlacesHTTPHelpers.swift */; };
 		5B7967EC24F7869100243F02 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7967EB24F7869100243F02 /* NavigationController.swift */; };
 		5B7967EE24F78DB800243F02 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7967ED24F78DB800243F02 /* Color.swift */; };
 		5B7967F424F78EA400243F02 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7967F024F78EA400243F02 /* Keychain.swift */; };
 		5B7967F524F78EA400243F02 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7967F124F78EA400243F02 /* Storyboard.swift */; };
 		5B7967F624F78EA400243F02 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7967F224F78EA400243F02 /* User.swift */; };
-		5B7967F724F78EA400243F02 /* ReachabilityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7967F324F78EA400243F02 /* ReachabilityProvider.swift */; };
 		5B79680124F7930600243F02 /* Namespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7967FB24F7930600243F02 /* Namespaces.swift */; };
 		5B79680224F7930600243F02 /* Funcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7967FC24F7930600243F02 /* Funcs.swift */; };
 		5B79680424F7930600243F02 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7967FE24F7930600243F02 /* Constants.swift */; };
@@ -56,14 +55,13 @@
 		1161C23C62382196E1F353D0 /* Pods-NearGoodPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearGoodPlaces.release.xcconfig"; path = "Target Support Files/Pods-NearGoodPlaces/Pods-NearGoodPlaces.release.xcconfig"; sourceTree = "<group>"; };
 		5B51027424FB97370076FA41 /* ListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListManager.swift; sourceTree = "<group>"; };
 		5B51027624FB979B0076FA41 /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
-		5B51027824FB97B50076FA41 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		5B51027824FB97B50076FA41 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		5B57F06824FA420200B0B639 /* PlacesHTTPHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesHTTPHelpers.swift; sourceTree = "<group>"; };
 		5B7967EB24F7869100243F02 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		5B7967ED24F78DB800243F02 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		5B7967F024F78EA400243F02 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		5B7967F124F78EA400243F02 /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		5B7967F224F78EA400243F02 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		5B7967F324F78EA400243F02 /* ReachabilityProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityProvider.swift; sourceTree = "<group>"; };
 		5B7967FB24F7930600243F02 /* Namespaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Namespaces.swift; sourceTree = "<group>"; };
 		5B7967FC24F7930600243F02 /* Funcs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Funcs.swift; sourceTree = "<group>"; };
 		5B7967FE24F7930600243F02 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -162,10 +160,9 @@
 				5B7967F224F78EA400243F02 /* User.swift */,
 				5B7967F024F78EA400243F02 /* Keychain.swift */,
 				5B91711524FAA0220092FA48 /* Paginator.swift */,
-				5B7967F324F78EA400243F02 /* ReachabilityProvider.swift */,
 				5B7967F124F78EA400243F02 /* Storyboard.swift */,
 				5B51027624FB979B0076FA41 /* DataBase.swift */,
-				5B51027824FB97B50076FA41 /* Map.swift */,
+				5B51027824FB97B50076FA41 /* LocationService.swift */,
 				5BFD4A6724FC3EE1004F5A89 /* Connectivity.swift */,
 			);
 			path = Wrappers;
@@ -440,14 +437,13 @@
 				5B91711424FA95160092FA48 /* ConvenienceModels.swift in Sources */,
 				5B79681524F7CD1500243F02 /* Cell.swift in Sources */,
 				5B7967EE24F78DB800243F02 /* Color.swift in Sources */,
-				5B7967F724F78EA400243F02 /* ReachabilityProvider.swift in Sources */,
 				5B7967F524F78EA400243F02 /* Storyboard.swift in Sources */,
 				5B57F06D24FA420200B0B639 /* PlacesHTTPHelpers.swift in Sources */,
 				5B7967EC24F7869100243F02 /* NavigationController.swift in Sources */,
 				5B79680D24F7BEFF00243F02 /* Global access .swift in Sources */,
 				5B91711624FAA0220092FA48 /* Paginator.swift in Sources */,
 				5BDE61A324F6F85E0065389C /* PlacesViewController.swift in Sources */,
-				5B51027924FB97B50076FA41 /* Map.swift in Sources */,
+				5B51027924FB97B50076FA41 /* LocationService.swift in Sources */,
 				5BA3C21124F927EE00FFDEDB /* HTTPConstants.swift in Sources */,
 				5B79680924F7950E00243F02 /* BaseViewModel.swift in Sources */,
 				5B79680F24F7C49100243F02 /* ServerErrorModels.swift in Sources */,

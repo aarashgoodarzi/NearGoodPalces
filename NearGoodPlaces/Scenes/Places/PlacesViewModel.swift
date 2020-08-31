@@ -25,7 +25,7 @@ class PlacesViewModel: BaseViewModel {
     override func viewDidLoad() {
         super.viewDidLoad()
         clearKeychainAtFirstRun()
-        setupLocationActions()
+        setupListManager()
         setupPaginator()
         getUserLocationPermision()
     }
@@ -53,31 +53,21 @@ class PlacesViewModel: BaseViewModel {
     }
     
     //MARK: Setup Location Actions
-    private func setupLocationActions() {
-      
-        listManager.setActions(onNoSignificantLocationChange: { [weak self] list in
-            list.isEmpty ? self?.getNearPalces() : self?.list.onNext(list)
-        }, onSignificantLocationChange: { [weak self] _ in
-            self?.getNearPalces()
-        }, onNoConnection: { [weak self] list in
-            list.isEmpty ? self?.hint.onNext(.noData) : self?.list.onNext(list)
-        }, onLocationPermissionNotGranted: { [weak self] list in
-            list.isEmpty ? self?.hint.onNext(.locationPermisionNeeded) : self?.list.onNext(list)
-        }, onNoLocationAvailabe: { [weak self] list in
-             list.isEmpty ? self?.hint.onNext(.noLocationAvailable) : self?.list.onNext(list)
-        })
+    private func setupListManager() {
+        listManager.delegate = self
+        listManager.locationService.requestLocation()
     }
     
     //MARK: Setup Paginator
     private func setupPaginator() {
         listManager.paginator.onNextPage { [weak self] _ in
-            self?.getNearPalces()
+            self?.getNearPalces(onNextPage: true)
         }
     }
     
     //MARK: Get User Location Permision
     private func getUserLocationPermision() {
-        listManager.map.requestLocationPermision()
+        listManager.locationService.requestLocationPermision()
     }
     
     //**
@@ -102,7 +92,7 @@ class PlacesViewModel: BaseViewModel {
     }
     
     //MARK: Get Near Palces
-    private func getNearPalces() {
+    private func getNearPalces(onNextPage: Bool) {
         
         guard let httpRequest = getNearPalcesRequest() else {
             return
@@ -115,7 +105,7 @@ class PlacesViewModel: BaseViewModel {
             self.isIndocatorAnimating.onNext(false)
             switch result {
             case .success(let serverResponse):
-                self.proccessResponse(serverResponse: serverResponse)
+                self.proccessResponse(serverResponse: serverResponse, onNextPage: onNextPage)
             case .failure(let error):
                 self.processError(error: error, serverErrorCompletion: { [weak self] in
                     self?.hintNoData()
@@ -133,22 +123,47 @@ class PlacesViewModel: BaseViewModel {
     }
     
     //MARK: Proccess Response
-    private func proccessResponse(serverResponse: ServerModels.Response.Explore) {
+    private func proccessResponse(serverResponse: ServerModels.Response.Explore, onNextPage: Bool) {
         
         guard let venues = (serverResponse.response?.groups?.first?.items?.compactMap { $0.venue }),
             let totalResults = serverResponse.response?.totalResults else {
                 hintNoData()
                 return
         }
+        if onNextPage {
+            listHolder.append(contentsOf: venues)
+        } else {
+            listHolder = venues
+        }
+        list.onNext(listHolder)
         venues.isEmpty ? hintNoData() : hint.onNext(.none)
         listManager.paginator.update(by: venues, totalResults: totalResults)
-        listHolder.append(contentsOf: venues)
-        list.onNext(listHolder)
         User.updateSavedPalces(list: listHolder)
     }
 
     //end of class
 }
 
-
-
+//MARK: ListManagerDelegate
+extension PlacesViewModel: ListManagerDelegate {
+    
+    func significantLocationChange(location: Location) {
+        getNearPalces(onNextPage: false)
+    }
+    
+    func noSignificantLocationChange(list: [ServerModels.Response.Venue]) {
+        list.isEmpty ? getNearPalces(onNextPage: false) : self.list.onNext(list)
+    }
+    
+    func noConnection(list: [ServerModels.Response.Venue]) {
+        list.isEmpty ? hint.onNext(.noData) : self.list.onNext(list)
+    }
+    
+    func locationPermissionNotGranted(list: [ServerModels.Response.Venue]) {
+        list.isEmpty ? hint.onNext(.locationPermisionNeeded) : self.list.onNext(list)
+    }
+    
+    func noLocationAvailabe(list: [ServerModels.Response.Venue]) {
+        list.isEmpty ? hint.onNext(.noLocationAvailable) : self.list.onNext(list)
+    }
+}
