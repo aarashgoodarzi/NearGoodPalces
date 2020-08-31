@@ -12,9 +12,14 @@ class PlacesViewModel: BaseViewModel {
     
     //MARK: - Observables and Vars
     let list = PublishSubject<[ServerModels.Response.Venue]>()
-    private var listHolder: [ServerModels.Response.Venue] = []
+    private var listHolder: [ServerModels.Response.Venue] = [] {
+        didSet {
+            list.onNext(listHolder)
+        }
+    }
     let hint = PublishSubject<Hint>()
     private let listManager: ListManager
+    var selectedPlace: ServerModels.Response.Venue?
     
     init(webservice: WebServiceProtocol, listManager: ListManager) {
         self.listManager = listManager
@@ -38,7 +43,8 @@ class PlacesViewModel: BaseViewModel {
     
     //MARK: View Accessing Methods
     func didSelectItem(at row: Int) {
-        
+        selectedPlace = listHolder[row]
+        goNext()
     }
     
     func listReached(at row: Int) {
@@ -47,7 +53,6 @@ class PlacesViewModel: BaseViewModel {
     
     func retryButtonTapped() {
         listHolder.removeAll()
-        list.onNext([])
         listManager.paginator.reset()
         getUserLocationPermision()
     }
@@ -135,7 +140,6 @@ class PlacesViewModel: BaseViewModel {
         } else {
             listHolder = venues
         }
-        list.onNext(listHolder)
         venues.isEmpty ? hintNoData() : hint.onNext(.none)
         listManager.paginator.update(by: venues, totalResults: totalResults)
         User.updateSavedPalces(list: listHolder)
@@ -152,18 +156,34 @@ extension PlacesViewModel: ListManagerDelegate {
     }
     
     func noSignificantLocationChange(list: [ServerModels.Response.Venue]) {
-        list.isEmpty ? getNearPalces(onNextPage: false) : self.list.onNext(list)
+        if list.isEmpty {
+            getNearPalces(onNextPage: false)
+        } else {
+            listHolder = list
+        }
     }
     
     func noConnection(list: [ServerModels.Response.Venue]) {
-        list.isEmpty ? hint.onNext(.noData) : self.list.onNext(list)
+        if list.isEmpty {
+            hint.onNext(.noData)
+        } else {
+            listHolder = list
+        }
     }
     
     func locationPermissionNotGranted(list: [ServerModels.Response.Venue]) {
-        list.isEmpty ? hint.onNext(.locationPermisionNeeded) : self.list.onNext(list)
+        if list.isEmpty {
+            hint.onNext(.locationPermisionNeeded)
+        } else {
+            listHolder = list
+        }
     }
     
     func noLocationAvailabe(list: [ServerModels.Response.Venue]) {
-        list.isEmpty ? hint.onNext(.noLocationAvailable) : self.list.onNext(list)
+        if list.isEmpty {
+            hint.onNext(.noLocationAvailable)
+        } else {
+            listHolder = list
+        }
     }
 }

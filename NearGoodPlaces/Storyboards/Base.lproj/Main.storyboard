@@ -166,6 +166,94 @@
             </objects>
             <point key="canvasLocation" x="646.37681159420299" y="124.55357142857142"/>
         </scene>
+        <!--Place Detail View Controller-->
+        <scene sceneID="6Lo-3Z-8pf">
+            <objects>
+                <viewController storyboardIdentifier="PlaceDetailViewController" id="IBJ-Pk-qhG" customClass="PlaceDetailViewController" customModule="NearGoodPlaces" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CaQ-im-eky">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="bxK-d7-Amg">
+                                <rect key="frame" x="15" y="15" width="345" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Jpp-BB-EI1"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ali Cafe" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjY-6g-lS6">
+                                <rect key="frame" x="15" y="240" width="345" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Obp-DP-Hts"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lat, lng" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDS-xR-sPj">
+                                <rect key="frame" x="15" y="300" width="345" height="16"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4/5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DuV-T6-OEi">
+                                <rect key="frame" x="15" y="324" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9QI-aB-D65"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="formatted Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIz-yC-7JR">
+                                <rect key="frame" x="15" y="384" width="345" height="16"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2km" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMq-Tg-0c7">
+                                <rect key="frame" x="16" y="408" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="9HO-1B-gPK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1035257448" green="0.1035257448" blue="0.1035257448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DuV-T6-OEi" firstAttribute="top" secondItem="hDS-xR-sPj" secondAttribute="bottom" constant="8" id="7ug-xe-lad"/>
+                            <constraint firstAttribute="trailing" secondItem="bxK-d7-Amg" secondAttribute="trailing" constant="15" id="8eb-h3-Ft9"/>
+                            <constraint firstItem="pMq-Tg-0c7" firstAttribute="top" secondItem="rIz-yC-7JR" secondAttribute="bottom" constant="8" id="B67-UI-vqZ"/>
+                            <constraint firstItem="rIz-yC-7JR" firstAttribute="top" secondItem="DuV-T6-OEi" secondAttribute="bottom" constant="30" id="CHI-LQ-B9U"/>
+                            <constraint firstItem="bxK-d7-Amg" firstAttribute="top" secondItem="P3S-4M-gAu" secondAttribute="top" constant="15" id="CqF-3e-0Lb"/>
+                            <constraint firstItem="DuV-T6-OEi" firstAttribute="leading" secondItem="fjY-6g-lS6" secondAttribute="leading" id="FCN-Zg-czB"/>
+                            <constraint firstItem="bxK-d7-Amg" firstAttribute="leading" secondItem="P3S-4M-gAu" secondAttribute="leading" constant="15" id="H3h-gS-9ct"/>
+                            <constraint firstItem="hDS-xR-sPj" firstAttribute="top" secondItem="fjY-6g-lS6" secondAttribute="bottom" constant="20" id="OtD-Ra-8cS"/>
+                            <constraint firstItem="pMq-Tg-0c7" firstAttribute="leading" secondItem="CaQ-im-eky" secondAttribute="leadingMargin" id="SmF-Jw-Fdb"/>
+                            <constraint firstItem="fjY-6g-lS6" firstAttribute="leading" secondItem="bxK-d7-Amg" secondAttribute="leading" id="Ugz-Ok-SyN"/>
+                            <constraint firstItem="fjY-6g-lS6" firstAttribute="trailing" secondItem="bxK-d7-Amg" secondAttribute="trailing" id="he4-Ii-OEK"/>
+                            <constraint firstItem="rIz-yC-7JR" firstAttribute="trailing" secondItem="fjY-6g-lS6" secondAttribute="trailing" id="jTX-Ao-MbG"/>
+                            <constraint firstItem="rIz-yC-7JR" firstAttribute="leading" secondItem="fjY-6g-lS6" secondAttribute="leading" id="nOX-Rl-BMU"/>
+                            <constraint firstItem="hDS-xR-sPj" firstAttribute="trailing" secondItem="fjY-6g-lS6" secondAttribute="trailing" id="pVC-tl-0iN"/>
+                            <constraint firstItem="DuV-T6-OEi" firstAttribute="trailing" secondItem="fjY-6g-lS6" secondAttribute="trailing" id="uJt-Uy-kas"/>
+                            <constraint firstItem="hDS-xR-sPj" firstAttribute="leading" secondItem="fjY-6g-lS6" secondAttribute="leading" id="uPJ-9o-NCj"/>
+                            <constraint firstItem="P3S-4M-gAu" firstAttribute="trailing" secondItem="pMq-Tg-0c7" secondAttribute="trailing" constant="14" id="uv2-D0-HAH"/>
+                            <constraint firstItem="fjY-6g-lS6" firstAttribute="top" secondItem="bxK-d7-Amg" secondAttribute="bottom" constant="25" id="zcO-JR-xqx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="P3S-4M-gAu"/>
+                    </view>
+                    <connections>
+                        <outlet property="fullAdress" destination="pMq-Tg-0c7" id="fiL-Bc-qGf"/>
+                        <outlet property="latLng" destination="DuV-T6-OEi" id="fVW-0h-jMI"/>
+                        <outlet property="name" destination="fjY-6g-lS6" id="0AC-rf-SMK"/>
+                        <outlet property="placeImage" destination="bxK-d7-Amg" id="VgU-zG-iNX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Hp-Tz-cnG" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2335" y="124"/>
+        </scene>
     </scenes>
     <resources>
         <image name="logo" width="225" height="225"/>

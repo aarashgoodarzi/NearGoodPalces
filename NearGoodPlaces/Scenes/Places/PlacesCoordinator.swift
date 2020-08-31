@@ -29,21 +29,20 @@ class PlacesCoordinator: BaseCoordinator<Void> {
     
     //**
     private func setupVc() {
-//        viewController.viewModel = self.viewModel
-//        rootViewController.pushViewController(viewController, animated: true)
     }
     
     //**
     private func SetupNext() {
         
-        viewModel.goNextFlag.subscribe(onNext: { _ in
-            
-          
-//            let viewModel = ZZZViewModel()
-//            viewModel.aaa = self.viewModel.aaa
-//            let coordinator = ZZZCoordinator(rootViewController: viewController, viewModel: viewModel)
-//            self.coordinate(to: coordinator).subscribe().disposed(by: self.disposeBag)
-            
+        viewModel.goNextFlag.subscribe(onNext: { [weak self] in
+            guard let self = self else {
+                return
+            }
+            let webservice = WebServcie()
+            let viewModel = PlaceDetailViewModel(webservice: webservice)
+            viewModel.place = self.viewModel.selectedPlace
+            let coordinator = PlaceDetailCoordinator(rootViewController: self.rootViewController, viewModel: viewModel)
+            self.coordinate(to: coordinator).subscribe().disposed(by: self.disposeBag)
         }).disposed(by: disposeBag)
     }
     
